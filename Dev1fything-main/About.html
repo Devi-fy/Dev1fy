@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="https://cdn.glitch.global/4182429a-2412-45a4-b24a-208c3020ffd7/Amongus.gif?v=1680641785809" />
+
+    <title>Other</title>
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/Dev1fything-main/style.css" />
+
+    <!-- import the webpage's javascript file -->
+    <script src="/Dev1fything-main/script.js" defer></script>
+    <script src="/Dev1fything-main/tabshide.js" defer></script>
+  </head>
+  <body>
+    <!-- this is the start of content -->
+    <ul>
+  <li><a class="" href="/Dev1fything-main/index">Home</a></li>
+  <li><a class="" href="/Dev1fything-main/Proxies">Proxies</a></li>
+  <li><a class="" href="/Dev1fything-main/GamesWebsites">Games Websites</a></li>
+  <li><a class="" href="/Dev1fything-main/Movies">Movies</a></li>
+  <li><a class="" href="/Dev1fything-main/Other">Other</a></li>
+  <li><a class="" href="/Dev1fything-main/Partners">Partners</a></li>
+  <li><a class="" href="/Dev1fything-main/Settings">Settings</a></li>
+  <li><a class="right activenav" href="/About">About</a></li>
+    </ul> 
+    <div id="custom-cursor"></div>
+       <h1>
+         About
+       </h1>
+       <p>Are you ready for an adventure in the world of entertainment? Look no further than our unblocked school website! Our website is designed <br> to provide you with a safe and reliable platform to explore the latest and greatest movies, TV shows, and games.
+        <br><br>
+        With our user-friendly and visually appealing design, you'll be able to find the content you're interested in quickly and easily. And if <br>you're looking to connect with other students during class breaks or free time, our chatroom is the perfect place to share your interests, make new friends, and engage in fun discussions.
+        <br><br>
+        <br>On our unblocked school website, we are committed to providing you with the best possible user experience. We regularly update our <br>content to ensure that you have access to the latest and greatest entertainment options, and we welcome your feedback and <br>suggestions for improving our website.
+        <br><br>
+        <br>So what are you waiting for? Join our community today and embark on an adventure in the world of entertainment! With endless possibilities and a community of like-minded individuals, the possibilities are endless. We can't wait to see what you discover on our <br>unblocked school website.</p>
+        <button id="exploding-btn">
+            <span>Start Your Adventure</span>
+            <div class="explosion transition"></div>
+          </button>          
+  </body>
+</html>
+
+<style>
+#exploding-btn {
+  position: relative;
+  overflow: hidden;
+  background-color: rgb(212, 132, 34);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px #888888;
+  animation: explode 1s ease-out;
+}
+
+#exploding-btn span {
+  position: relative;
+  z-index: 1;
+}
+
+.explosion {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  background-color: #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  opacity: 0;
+  animation: explosion 0.6s ease-out forwards;
+}
+
+@keyframes explode {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes explosion {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    width: 800px;
+    height: 800px;
+    opacity: 0;
+  }
+}
+</style>
+
+<script>
+const button = document.getElementById("exploding-btn");
+
+button.addEventListener("click", function(event) {
+  const explosion = document.createElement("div");
+  explosion.classList.add("explosion");
+  button.appendChild(explosion);
+  
+  const rect = button.getBoundingClientRect();
+  const x = event.clientX - rect.left;
+  const y = event.clientY - rect.top;
+  
+  explosion.style.top = y + "px";
+  explosion.style.left = x + "px";
+  
+  setTimeout(function() {
+    explosion.remove();
+  }, 600);
+
+  setTimeout(function() {
+    // Do something here after 1 second of button animation completion
+    console.log("Button animation fully over");
+    document.location.href = "/index"
+  }, 500); // 1 second (1000ms) delay + 600ms explosion animation duration
+});
+</script>
