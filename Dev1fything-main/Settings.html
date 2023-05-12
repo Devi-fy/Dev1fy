@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script
+  type="text/javascript"
+  src="https://app.termly.io/embed.min.js"
+  data-auto-block="on"
+  data-website-uuid="41d3f6f9-9ebb-43c5-a333-f29788ad1f21"
+></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="https://cdn.glitch.global/4182429a-2412-45a4-b24a-208c3020ffd7/Amongus.gif?v=1680641785809" />
+
+    <title>Home</title>
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/Dev1fything-main/style.css" />
+
+    <!-- import the webpage's javascript file -->
+    <script src="/Dev1fything-main/script.js" defer></script>
+    <script src="/Dev1fything-main/tabshide.js" defer></script>
+  </head>
+  <body>
+    <!-- this is the start of content -->
+    <ul>
+  <li><a class="" href="/Dev1fything-main/index">Home</a></li>
+  <li><a class="" href="/Dev1fything-main/Proxies">Proxies</a></li>
+  <li><a class="" href="/Dev1fything-main/GamesWebsites">Games Websites</a></li>
+  <li><a class="" href="/Dev1fything-main/Movies">Movies</a></li>
+  <li><a class="" href="/Dev1fything-main/Other">Other</a></li>
+  <li><a class="" href="/Dev1fything-main/Partners">Partners</a></li>
+  <li><a class="activenav" href="/Dev1fything-main/Settings">Settings</a></li>
+  <li><a class="right" href="/Dev1fything-main/About">About</a></li>
+    </ul>
+    <div id="custom-cursor"></div>
+       <h1>
+         Settings
+       </h1> <h3>BETA</h3>
+       <style>
+        .toggle {
+          position: relative;
+          display: inline-block;
+          width: 60px;
+          height: 34px;
+        }
+        
+        .toggle input {
+          display: none;
+        }
+        
+        .slider {
+          position: absolute;
+          cursor: pointer;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: rgb(64, 64, 64);
+          transition: .4s;
+          border-radius: 34px;
+        }
+        
+        .slider:before {
+          position: absolute;
+          content: "";
+          height: 26px;
+          width: 26px;
+          left: 4px;
+          bottom: 4px;
+          background-color: white;
+          transition: .4s;
+          border-radius: 50%;
+        }
+        
+        input:checked + .slider {
+          background-color: rgb(212, 132, 34);
+        }
+        
+        input:checked + .slider:before {
+          transform: translateX(26px);
+        }
+      </style>
+      <h2>Hide Title and Tab Icon</h2>
+      <h3>Description</h3>
+      <p>This toggle slider will be able to make your tab hiden or not depending if you want it to be. <br> The only thing that wont be hidden is the Movies and Games we have in store for you. <br> Remember stay hidden</p>
+      <label class="toggle">
+        <input type="checkbox">
+        <span class="slider"></span>
+      </label>
+  </body>
+</html>
+
+
+<script>
+  const toggle = document.querySelector('.toggle');
+  const input = toggle.querySelector('input');
+  
+  // Read the cookie and set the toggle state if it exists
+  const tabiconhide = getCookie('tabiconhide');
+  const toggleState = getCookie('toggleState');
+
+  if (toggleState) {
+    input.checked = toggleState === 'true';
+    input.checked = tabiconhide === 'true';
+  }
+
+  
+  toggle.addEventListener('click', function() {
+    // Toggle the input state
+    input.checked = !input.checked;
+    
+    // Write the new toggle state to a cookie
+    setCookie('toggleState', input.checked);
+    setCookie('tabiconhide', input.checked);
+
+    if (input.checked) {
+      // Do something when the toggle is on
+      console.log('Toggle slider is on');
+      document.querySelector('link[rel="icon"]').href = 'https://www.google.com/favicon.ico';
+      document.title = "Google";
+    } else {
+      // Do something when the toggle is off
+      console.log('Toggle slider is off');
+      document.querySelector('link[rel="icon"]').href = 'https://cdn.glitch.global/4182429a-2412-45a4-b24a-208c3020ffd7/Amongus.gif?v=1680641785809';
+      document.title = "Dev1fy";
+    }
+  });
+  
+  // Helper function to set a cookie
+  function setCookie(name, value, days = 365) {
+    const date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    const expires = "expires=" + date.toUTCString();
+    document.cookie = name + "=" + value + ";" + expires + ";path=/";
+  }
+  
+  // Helper function to get a cookie
+  function getCookie(name) {
+    const cookieName = name + "=";
+    const decodedCookie = decodeURIComponent(document.cookie);
+    const cookieArray = decodedCookie.split(';');
+    for (let i = 0; i < cookieArray.length; i++) {
+      let cookie = cookieArray[i];
+      while (cookie.charAt(0) === ' ') {
+        cookie = cookie.substring(1);
+      }
+      if (cookie.indexOf(cookieName) === 0) {
+        return cookie.substring(cookieName.length, cookie.length);
+      }
+    }
+    return "";
+  }
+</script>
