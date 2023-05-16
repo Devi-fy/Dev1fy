@@ -60,28 +60,3 @@ button {
 button:hover {
     background-color: #0056b3;
 }
-
-/* Stars in the background */
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("/Dev1fything-main/bug-report/stars.avif");
-    background-repeat: repeat;
-    background-size: 2px 2px;
-    z-index: -1;
-    pointer-events: none;
-    animation: starAnimation 10s linear infinite;
-}
-
-@keyframes starAnimation {
-    from {
-        background-position: 0 0;
-    }
-    to {
-        background-position: 100% 100%;
-    }
-}
