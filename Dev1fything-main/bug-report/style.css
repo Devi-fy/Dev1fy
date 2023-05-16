@@ -16,12 +16,14 @@ header {
     text-align: center;
 }
 
-h1 {
+h1,
+body {
     font-size: 32px;
     transition: color 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-h1:hover {
+h1,
+body:hover {
     color: rgb(212, 132, 34);
 }
 
