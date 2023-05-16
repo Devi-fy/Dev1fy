@@ -5,20 +5,26 @@ body, h1, h2, form {
 }
 
 body {
-    background-color: #000;
+    background-color: #262626;
     color: #fff;
     font-family: Arial, sans-serif;
 }
 
 header {
-    background-color: #000;
+    background-color: #262626;
     padding: 20px;
     text-align: center;
 }
 
 h1 {
     font-size: 32px;
+    transition: color 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
+
+h1:hover {
+    color: rgb(212, 132, 34);
+}
+
 
 section {
     max-width: 600px;
@@ -64,7 +70,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('https://www.example.com/path/to/stars.png');
+    background-image: url("/Dev1fything-main/bug-report/stars.avif");
     background-repeat: repeat;
     background-size: 2px 2px;
     z-index: -1;
