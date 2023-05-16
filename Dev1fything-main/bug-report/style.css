@@ -5,13 +5,13 @@ body, h1, h2, form {
 }
 
 body {
-    background-color: #262626;
+    background-color: #000;
     color: #fff;
     font-family: Arial, sans-serif;
 }
 
 header {
-    background-color: #262626;
+    background-color: #000;
     padding: 20px;
     text-align: center;
 }
@@ -24,7 +24,6 @@ h1 {
 h1:hover {
     color: rgb(212, 132, 34);
 }
-
 
 section {
     max-width: 600px;
