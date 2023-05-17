@@ -82,7 +82,7 @@ function clickbutton1() {
 }
 
 function clickbutton3() {
-  window.location.href = "/Dev1fything-main/bug-report/index";
+  window.location.href = "/Dev1fything-main/bug";
 }
 
 function aboutblank() {
