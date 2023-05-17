@@ -27,3 +27,24 @@ function getCookie(name) {
 
 checktabiconhide()
 setTimeout(checktabiconhide(), 5000);
+
+var devToolsOpen = false;
+
+function checkDevTools() {
+  if (
+    window.outerWidth - window.innerWidth > 100 ||
+    window.outerHeight - window.innerHeight > 100
+  ) {
+    devToolsOpen = true;
+    // DevTools is open
+    debugger; // Run debugger if DevTools is detected
+  } else {
+    devToolsOpen = false;
+    // DevTools is closed
+  }
+}
+
+// Periodically check for DevTools
+setInterval(function () {
+  checkDevTools();
+}, 1000);
